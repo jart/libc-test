@@ -50,15 +50,18 @@ int main(void)
 	pthread_t t1,t2,t3;
 	pthread_once_t once = PTHREAD_ONCE_INIT;
 	sem_t s1,s2,s3;
+	void *a1[] = {&once, &s1};
+	void *a2[] = {&once, &s2};
+	void *a3[] = {&once, &s3};
 	void *p;
 	int r;
 
 	E(sem_init(&s1,0,0));
 	E(sem_init(&s2,0,0));
 	E(sem_init(&s3,0,0));
-	T(pthread_create(&t1, 0, start, (void*[]){&once,&s1}));
-	T(pthread_create(&t2, 0, start, (void*[]){&once,&s2}));
-	T(pthread_create(&t3, 0, start, (void*[]){&once,&s3}));
+	T(pthread_create(&t1, 0, start, a1));
+	T(pthread_create(&t2, 0, start, a2));
+	T(pthread_create(&t3, 0, start, a3));
 	if (!deadlocked(&s1)) T(pthread_join(t1,&p));
 	if (!deadlocked(&s2)) T(pthread_join(t2,&p));
 	if (!deadlocked(&s3)) T(pthread_join(t3,&p));
