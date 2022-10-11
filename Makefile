@@ -115,7 +115,7 @@ $(math.OBJS): src/common/mtest.h
 $(B)/api/main.exe: $(api.OBJS)
 api/main.OBJS:=$(api.OBJS)
 $(api.OBJS):$(B)/common/options.h
-$(api.OBJS):CFLAGS+=-pedantic-errors -Werror -Wno-unused -D_XOPEN_SOURCE=700
+$(api.OBJS):CFLAGS+=-pedantic-errors -std=c11 -Werror -Wno-unused -D_XOPEN_SOURCE=700
 
 all run: $(B)/REPORT
 	grep FAIL $< || echo PASS
