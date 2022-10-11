@@ -1,7 +1,7 @@
 #include <sys/msg.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f()
 {
 T(msgqnum_t)

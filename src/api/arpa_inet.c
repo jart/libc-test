@@ -1,6 +1,6 @@
 #include <arpa/inet.h>
 #define T(t) (t*)0;
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
 static void f()
 {

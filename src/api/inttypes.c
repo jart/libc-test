@@ -1,7 +1,7 @@
 #include <inttypes.h>
 #define T(t) (t*)0;
 #define S(n) {char s[] = "" n;}
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f()
 {
 T(imaxdiv_t)

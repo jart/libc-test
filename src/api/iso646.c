@@ -1,5 +1,5 @@
 #include <iso646.h>
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f(){
 int i = 0;
 i and_eq 1;

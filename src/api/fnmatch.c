@@ -1,5 +1,5 @@
 #include <fnmatch.h>
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f()
 {
 C(FNM_NOMATCH)

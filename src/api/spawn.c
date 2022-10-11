@@ -1,7 +1,7 @@
 #include <spawn.h>
 #include "options.h"
 #define T(t) (t*)0;
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f()
 {
 T(posix_spawnattr_t)

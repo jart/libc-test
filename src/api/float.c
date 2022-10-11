@@ -1,6 +1,6 @@
 #include <float.h>
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 #define D(n) {long double d = n;}
 static void f()
 {

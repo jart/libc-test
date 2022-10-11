@@ -1,6 +1,6 @@
 #ifdef X_FMTMSG
 #include <fmtmsg.h>
-#define C(n) switch(n){case n:;}
+#define C(n) {__auto_type c = n;}
 static void f()
 {
 C(MM_HARD)

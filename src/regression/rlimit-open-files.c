@@ -9,7 +9,7 @@
 int main(void)
 {
 	static const long lim = 42;
-	static const int r = RLIMIT_NOFILE;
+	const int r = RLIMIT_NOFILE;
 	struct rlimit rl;
 	int fd, maxfd = 0;
 
